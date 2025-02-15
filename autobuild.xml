@@ -3,10 +3,8 @@
 <map>
     <key>package_description</key>
     <map>
-      <key>canonical_repo</key>
-      <string>https://github.com/slviewer-3p/3p-sdl3</string>
       <key>copyright</key>
-      <string>Copyright (C) 1997-2012 Sam Lantinga</string>
+      <string>Copyright (C) 1997-2022 Sam Lantinga (slouken@libsdl.org)</string>
       <key>description</key>
       <string>Simple DirectMedia Layer is a cross-platform multimedia library designed to provide low level access to audio, keyboard, mouse, joystick, 3D hardware via OpenGL, and 2D video framebuffer.</string>
       <key>license</key>
@@ -40,12 +38,13 @@
           </map>
           <key>manifest</key>
           <array>
+            <string>LICENSES/SDL3.txt</string>
             <string>include/SDL3/*</string>
           </array>
           <key>name</key>
           <string>common</string>
         </map>
-        <key>linux</key>
+        <key>darwin64</key>
         <map>
           <key>configurations</key>
           <map>
@@ -62,15 +61,59 @@
           </map>
           <key>manifest</key>
           <array>
-            <string>lib/release/*.a</string>
-            <string>lib/release/*so*</string>
+            <string>lib/release/*.*</string>
           </array>
           <key>name</key>
-          <string>linux</string>
+          <string>darwin64</string>
+        </map>
+        <key>linux64</key>
+        <map>
+          <key>configurations</key>
+          <map>
+            <key>Release</key>
+            <map>
+              <key>build</key>
+              <map>
+              </map>
+              <key>default</key>
+              <string>True</string>
+              <key>name</key>
+              <string>Release</string>
+            </map>
+          </map>
+          <key>manifest</key>
+          <array>
+            <string>lib/release/*.so*</string>
+          </array>
+          <key>name</key>
+          <string>linux64</string>
+        </map>
+        <key>windows64</key>
+        <map>
+          <key>configurations</key>
+          <map>
+            <key>Release</key>
+            <map>
+              <key>build</key>
+              <map>
+              </map>
+              <key>default</key>
+              <string>true</string>
+              <key>name</key>
+              <string>Release</string>
+            </map>
+          </map>
+          <key>manifest</key>
+          <array>
+            <string>lib/release/*.*</string>
+            <string>lib/debug/*.*</string>
+          </array>
+          <key>name</key>
+          <string>windows64</string>
         </map>
       </map>
-      <key>version_file</key>
-      <string>VERSION.txt</string>
+      <key>use_scm_version</key>
+      <boolean>true</boolean>
     </map>
     <key>type</key>
     <string>autobuild</string>
